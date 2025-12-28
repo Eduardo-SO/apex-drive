@@ -21,7 +21,7 @@ interface PerformanceChartProps {
 
 export function PerformanceChart({ data }: PerformanceChartProps) {
   return (
-    <div className="w-full h-[400px] bg-black/90 rounded-sm border border-white/10 p-6">
+    <div className="w-full h-[400px] bg-black/40 rounded-sm border border-white/10 p-6">
       <div className="mb-4">
         <h3 className="text-white/90 tracking-[0.2em] uppercase mb-1">
           Performance

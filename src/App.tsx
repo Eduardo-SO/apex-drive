@@ -5,6 +5,7 @@ import { useState } from 'react'
 import AIRegistrationForm from './components/ai-registration-form'
 import CarHero from './components/car-hero'
 import { PerformanceChart } from './components/performance-chart'
+import SidebarMenu from './components/sidebar-menu'
 import SpecsGrid from './components/specs-grid'
 import type { CarData } from './types/car.types'
 
@@ -22,7 +23,7 @@ function App() {
   return (
     <div className="min-h-screen bg-linear-to-br from-black via-zinc-950 to-black relative">
       {/* Sidebar */}
-      {/* <SidebarMenu /> */}
+      <SidebarMenu />
 
       {/* Main Content */}
       <div className="relative z-10 container mx-auto">

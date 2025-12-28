@@ -13,7 +13,7 @@ export default function GlassCard({
   hoverEffect = false,
 }: GlassCardProps) {
   const baseClasses =
-    'bg-black/60 backdrop-blur-xl border-[0.5px] border-white/10 rounded-lg p-4'
+    'bg-black/40 backdrop-blur-xl border-[0.5px] border-white/10 rounded-lg p-4'
 
   if (hoverEffect) {
     return (
