@@ -26,6 +26,7 @@ export default function AIRegistrationForm({
 
     // Dados simulados - Ferrari F40
     const mockCarData: CarData = {
+      imageUrl: 'https://i.ibb.co/39tX9R3f/f40.png',
       brand: 'Ferrari',
       model: 'F40',
       year: 1987,

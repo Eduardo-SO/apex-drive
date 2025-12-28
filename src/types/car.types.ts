@@ -35,6 +35,7 @@ export interface ChartDataPoint {
 }
 
 export interface CarData {
+  imageUrl?: string
   brand: string
   model: string
   year: number
