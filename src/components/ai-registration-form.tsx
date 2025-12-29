@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Search, Sparkles } from 'lucide-react'
 import { useState } from 'react'
 
+import { supabase } from '../lib/supabase'
 import type { CarData } from '../types/car.types'
 import GlassCard from './glass-card'
 
@@ -61,6 +62,26 @@ export default function AIRegistrationForm({
         { rpm: 7000, hp: 478, torque: 426 },
         { rpm: 7500, hp: 478, torque: 410 },
       ],
+    }
+
+    // New: Save to Supabase
+    try {
+      const { error } = await supabase.from('cars').insert({
+        brand: mockCarData.brand,
+        model: mockCarData.model,
+        year: mockCarData.year,
+        image_url: mockCarData.imageUrl,
+        specs: mockCarData.specs,
+        chart_data: mockCarData.chartData,
+      })
+
+      if (error) {
+        console.error('Error saving car to Supabase:', error)
+      } else {
+        console.log('Car saved successfully to Supabase')
+      }
+    } catch (err) {
+      console.error('Unexpected error saving car:', err)
     }
 
     setIsLoading(false)

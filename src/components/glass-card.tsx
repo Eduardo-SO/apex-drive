@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion'
+import { type HTMLMotionProps, motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 
-interface GlassCardProps {
+interface GlassCardProps extends HTMLMotionProps<'div'> {
   children: ReactNode
   className?: string
   hoverEffect?: boolean
@@ -11,6 +11,7 @@ export default function GlassCard({
   children,
   className = '',
   hoverEffect = false,
+  ...props
 }: GlassCardProps) {
   const baseClasses =
     'bg-black/40 backdrop-blur-xl border-[0.5px] border-white/10 rounded-lg p-4'
@@ -27,6 +28,7 @@ export default function GlassCard({
           borderColor: 'rgba(255, 255, 255, 0.15)',
           boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
         }}
+        {...props}
       >
         {children}
       </motion.div>
@@ -39,6 +41,7 @@ export default function GlassCard({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
+      {...props}
     >
       {children}
     </motion.div>

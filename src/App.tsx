@@ -5,6 +5,7 @@ import { useState } from 'react'
 import AIRegistrationForm from './components/ai-registration-form'
 import CarHero from './components/car-hero'
 import { PerformanceChart } from './components/performance-chart'
+import RecentCarsGrid from './components/recent-cars-grid'
 import SidebarMenu from './components/sidebar-menu'
 import SpecsGrid from './components/specs-grid'
 import type { CarData } from './types/car.types'
@@ -58,7 +59,10 @@ function App() {
             </div>
           </>
         ) : (
-          <AIRegistrationForm onCarDataReceived={handleCarDataReceived} />
+          <div className="space-y-16 py-10">
+            <AIRegistrationForm onCarDataReceived={handleCarDataReceived} />
+            <RecentCarsGrid onCarSelect={handleCarDataReceived} />
+          </div>
         )}
       </div>
 
@@ -67,6 +71,15 @@ function App() {
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-500/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-[120px]" />
       </div> */}
+
+      <div className="relative z-10 text-center py-8 border-t-[0.5px] border-white/5">
+        <p
+          className="text-white/30 tracking-[0.2em] uppercase"
+          style={{ fontFamily: 'monospace', fontSize: '9px' }}
+        >
+          Automotive Performance Analysis System
+        </p>
+      </div>
     </div>
   )
 }
